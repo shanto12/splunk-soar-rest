@@ -6,13 +6,28 @@ A Python client for interacting with the Splunk® SOAR (Cloud and On-Premises) R
 
 ## Features
 
--   Simple and intuitive client for all major REST API actions.
--   Support for both token-based (`ph-auth-token`) and user/password authentication.
--   Logical grouping of API calls based on endpoint categories (Containers, Artifacts, Playbooks, etc.).
--   Built-in handling of HTTP requests, responses, and errors with a custom exception class.
--   Comprehensive coverage of endpoints.
+- Simple and intuitive client for all major REST API actions.
+- Support for both token-based (`ph-auth-token`) and user/password authentication.
+- Logical grouping of API calls based on endpoint categories (Containers, Artifacts, Playbooks, etc.).
+- Built-in handling of HTTP requests, responses, and errors with a custom exception class.
+- Comprehensive coverage of endpoints.
 
 ## Installation
 
 ```bash
 pip install splunk-soar-rest
+```
+
+## Basic Usage
+
+```python
+from splunk_soar_rest import SplunkSOARClient
+
+client = SplunkSOARClient(
+    base_url="https://your.soar.instance",
+    auth_token="your_ph_auth_token",
+    verify=False
+)
+version_info = client.get_version()
+print(version_info)
+```
