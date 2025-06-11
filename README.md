@@ -1,15 +1,18 @@
-# splunk-soar-rest
+# Splunk SOAR REST API Python Client
 
-A minimal Python client for interacting with the Splunk SOAR REST API. This
-repository includes a small wrapper class and example scripts demonstrating how
-to list containers, retrieve artifacts, and run playbooks.
+A Python client for interacting with the Splunk® SOAR (Cloud and On-Premises) REST API. This library provides a structured, object-oriented approach to making API calls for all major endpoints.
+
+**Disclaimer:** This client is based on the "REST API Reference for Splunk SOAR (Cloud) current" document (Generated: 5/28/2025). This is not an officially supported Splunk product.
+
+## Features
+
+-   Simple and intuitive client for all major REST API actions.
+-   Support for both token-based (`ph-auth-token`) and user/password authentication.
+-   Logical grouping of API calls based on endpoint categories (Containers, Artifacts, Playbooks, etc.).
+-   Built-in handling of HTTP requests, responses, and errors with a custom exception class.
+-   Comprehensive coverage of endpoints.
 
 ## Installation
 
 ```bash
-pip install -r requirements.txt
-```
-
-## Usage
-
-See the examples in the `examples/` directory for basic usage.
+pip install splunk-soar-rest
