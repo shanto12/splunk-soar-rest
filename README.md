@@ -31,3 +31,18 @@ client = SplunkSOARClient(
 version_info = client.get_version()
 print(version_info)
 ```
+
+## Running Tests
+
+The project includes integration tests that exercise container, artifact, and note operations. These tests require access to a Splunk SOAR instance. Set the following environment variables before running:
+
+```
+export SOAR_URL="https://your.soar.instance"
+export SOAR_TOKEN="your_ph_auth_token"
+```
+
+Then execute:
+
+```
+python -m unittest -v
+```
