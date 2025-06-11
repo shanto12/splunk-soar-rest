@@ -1,11 +1,3 @@
-
----
-
-### File 5: `setup.py`
-
-This file is the build script for `setuptools`. It tells `setuptools` about your package (such as the name and version) as well as which code files to include.
-
-```python
 import setuptools
 
 with open("README.md", "r", encoding="utf-8") as fh:
