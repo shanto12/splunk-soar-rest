@@ -34,14 +34,14 @@ print(version_info)
 
 ## Running Tests
 
-The project includes integration tests that exercise container, artifact, and note operations. These tests require access to a Splunk SOAR instance. Set the following environment variables before running:
+The project includes a suite of unit tests as well as optional integration tests. Unit tests run without any configuration. The integration tests exercise container, artifact, and note operations and require access to a Splunk SOAR instance. Set the following environment variables before running the integration suite:
 
 ```
 export SOAR_URL="https://your.soar.instance"
 export SOAR_TOKEN="your_ph_auth_token"
 ```
 
-Then execute:
+Then execute the full test suite:
 
 ```
 python -m unittest -v
