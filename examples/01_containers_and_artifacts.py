@@ -21,8 +21,7 @@ def main():
         container_data = {
             "name": "API Test - Phishing Email Reported",
             "label": "events",
-            "severity": "high",
-            "owner_id": "admin"
+            "severity": "high"
         }
         new_container = client.create_container(**container_data)
         container_id = new_container['id']
