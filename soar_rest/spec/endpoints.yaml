@@ -1,0 +1,288 @@
+endpoints:
+  - name: system-info
+    path: /rest/system_info
+    method: GET
+    description: System info (license, version, uptime).
+  - name: status
+    path: /rest/status
+    method: GET
+    description: System status and configuration (may not be available on Cloud).
+  - name: severity
+    path: /rest/severity
+    method: GET
+    description: List severity values.
+  - name: feature-flags
+    path: /rest/feature_flag
+    method: GET
+    description: Enabled feature flags.
+  - name: hud-config
+    path: /rest/hud_config
+    method: GET
+    description: HUD configuration and widget metadata.
+
+  # Containers
+  - name: containers-list
+    path: /rest/container
+    method: GET
+    description: List containers with filters and pagination.
+  - name: container-detail
+    path: /rest/container/{id}
+    method: GET
+    description: Get a specific container by id.
+  - name: container-create
+    path: /rest/container
+    method: POST
+    description: Create one or more containers.
+  - name: container-update
+    path: /rest/container/{id}
+    method: POST
+    description: Update an existing container.
+  - name: container-delete
+    path: /rest/container/{id}
+    method: DELETE
+    description: Delete a container.
+
+  # Artifacts
+  - name: artifacts-list
+    path: /rest/artifact
+    method: GET
+    description: List artifacts with filters.
+  - name: artifact-detail
+    path: /rest/artifact/{id}
+    method: GET
+    description: Get artifact by id.
+  - name: artifact-create
+    path: /rest/artifact
+    method: POST
+    description: Create an artifact.
+  - name: artifact-delete
+    path: /rest/artifact/{id}
+    method: DELETE
+    description: Delete an artifact.
+
+  # Evidence / Notes
+  - name: evidence-list
+    path: /rest/evidence
+    method: GET
+    description: List evidence records.
+  - name: evidence-create
+    path: /rest/evidence
+    method: POST
+    description: Create evidence associated with a container or artifact.
+  - name: notes-list
+    path: /rest/note
+    method: GET
+    description: List notes.
+  - name: note-create
+    path: /rest/note
+    method: POST
+    description: Create a note on a container.
+
+  # Approvals
+  - name: approvals-list
+    path: /rest/approval
+    method: GET
+    description: List approvals.
+  - name: approval-detail
+    path: /rest/approval/{id}
+    method: GET
+    description: Get approval detail.
+  - name: approval-create
+    path: /rest/approval
+    method: POST
+    description: Create an approval request.
+  - name: approval-update
+    path: /rest/approval/{id}
+    method: POST
+    description: Update an approval (status/decision).
+  - name: approval-summary
+    path: /rest/approval/{id}/detail_summary_view
+    method: GET
+    description: Summary view of an approval.
+
+  # Actions and playbooks
+  - name: run-action
+    path: /rest/run_action
+    method: POST
+    description: Trigger an action on one or more assets.
+  - name: action-run-detail
+    path: /rest/action_run/{id}
+    method: GET
+    description: Inspect an action run.
+  - name: action-run-app-runs
+    path: /rest/action_run/{id}/app_runs
+    method: GET
+    description: List app runs for a given action run.
+  - name: run-playbook
+    path: /rest/run_playbook
+    method: POST
+    description: Trigger a playbook on a container/scope.
+  - name: playbooks-list
+    path: /rest/playbook
+    method: GET
+    description: List playbooks.
+  - name: playbook-detail
+    path: /rest/playbook/{id}
+    method: GET
+    description: Get a specific playbook’s metadata.
+  - name: playbook-update
+    path: /rest/playbook/{id}
+    method: POST
+    description: Update a playbook (enable/disable/labels).
+  - name: custom-functions
+    path: /rest/custom_function
+    method: GET
+    description: List custom functions.
+  - name: custom-function-detail
+    path: /rest/custom_function/{id}
+    method: GET
+    description: Get a custom function.
+
+  # Assets, apps, CEF, command run
+  - name: assets-list
+    path: /rest/asset
+    method: GET
+    description: List configured assets.
+  - name: asset-detail
+    path: /rest/asset/{id}
+    method: GET
+    description: Get asset configuration.
+  - name: asset-create
+    path: /rest/asset
+    method: POST
+    description: Create an asset.
+  - name: asset-update
+    path: /rest/asset/{id}
+    method: POST
+    description: Update an asset.
+  - name: asset-delete
+    path: /rest/asset/{id}
+    method: DELETE
+    description: Delete an asset.
+
+  - name: apps-list
+    path: /rest/app
+    method: GET
+    description: List apps installed on the cluster.
+  - name: app-detail
+    path: /rest/app/{id}
+    method: GET
+    description: App metadata.
+  - name: app-status
+    path: /rest/app_status
+    method: GET
+    description: App runtime status.
+  - name: app-run
+    path: /rest/app_run
+    method: GET
+    description: List app runs.
+  - name: app-run-detail
+    path: /rest/app_run/{id}
+    method: GET
+    description: Inspect a specific app run.
+  - name: app-run-action-result
+    path: /rest/app_run/{id}/action_result
+    method: GET
+    description: Action results for an app run.
+  - name: cef-to-raw
+    path: /rest/cef
+    method: POST
+    description: Convert CEF to human-friendly form.
+  - name: command-run
+    path: /rest/command_run
+    method: GET
+    description: List command runs.
+  - name: command-run-detail
+    path: /rest/command_run/{id}
+    method: GET
+    description: Inspect command run details.
+
+  # Lists, vault, aggregation, indicators
+  - name: lists
+    path: /rest/decided_list
+    method: GET
+    description: List decision lists.
+  - name: list-detail
+    path: /rest/decided_list/{id}
+    method: GET
+    description: Retrieve a list by id or name.
+  - name: vault-list
+    path: /rest/vault_document
+    method: GET
+    description: List vault documents.
+  - name: vault-detail
+    path: /rest/vault_document/{id}
+    method: GET
+    description: Get vault document metadata.
+  - name: aggregation-rules
+    path: /rest/aggregation_rule
+    method: GET
+    description: List aggregation rules.
+  - name: aggregation-rule-detail
+    path: /rest/aggregation_rule/{id}
+    method: GET
+    description: Get aggregation rule.
+  - name: indicators
+    path: /rest/indicator
+    method: GET
+    description: List indicators with filtering.
+  - name: indicator-detail
+    path: /rest/indicator/{id}
+    method: GET
+    description: Indicator by id.
+  - name: indicator-by-value
+    path: /rest/indicator_by_value
+    method: GET
+    description: Lookup indicator by value.
+
+  # Users, roles, tenants, audit
+  - name: users
+    path: /rest/ph_user
+    method: GET
+    description: List users.
+  - name: user-detail
+    path: /rest/ph_user/{id}
+    method: GET
+    description: User detail and preferences.
+  - name: user-token
+    path: /rest/ph_user/{id}/token
+    method: GET
+    description: User tokens.
+  - name: roles
+    path: /rest/role
+    method: GET
+    description: List roles.
+  - name: role-detail
+    path: /rest/role/{id}
+    method: GET
+    description: Role detail.
+  - name: tenants
+    path: /rest/tenant
+    method: GET
+    description: List tenants.
+  - name: tenant-detail
+    path: /rest/tenant/{id}
+    method: GET
+    description: Get tenant detail.
+  - name: audit
+    path: /rest/audit
+    method: GET
+    description: Audit log search with filters.
+
+  # Search / query / workbook
+  - name: search
+    path: /rest/search
+    method: GET
+    description: Search across objects with Lucene-like syntax.
+  - name: workbook
+    path: /rest/workbook
+    method: GET
+    description: Workbook definitions.
+  - name: workbook-phase
+    path: /rest/workbook_phase
+    method: GET
+    description: Workbook phases.
+  - name: workbook-phase-template
+    path: /rest/workbook_phase_template
+    method: GET
+    description: Workbook phase templates.

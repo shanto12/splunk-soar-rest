@@ -1,0 +1,1 @@
+"""Embedded endpoint specifications."""

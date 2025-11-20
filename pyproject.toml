@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "splunk-soar-rest"
+version = "0.1.0"
+description = "Python SDK + CLI for Splunk SOAR REST APIs"
+authors = [{ name = "Codex Generated" }]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "requests>=2.32.3",
+  "pydantic>=2.10.0",
+  "typer>=0.12.3",
+  "rich>=13.7.0",
+  "pyyaml>=6.0.1"
+]
+
+[project.urls]
+homepage = "https://docs.splunk.com/Documentation/SOAR/latest/PlatformAPI/Using"
+
+[tool.setuptools]
+packages = ["soar_rest", "soar_rest.resources", "soar_rest.spec"]
+
+[tool.setuptools.package-data]
+"soar_rest.spec" = ["endpoints.yaml", "endpoints_full.yaml"]
